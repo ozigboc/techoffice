@@ -78,9 +78,7 @@ const Products = ({category}) => {
     //       image: null
     //     });
     //   };
-    
-
-
+  
 
     const [formData, setFormData] = useState({
         name: '',

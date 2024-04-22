@@ -1,15 +1,41 @@
-import React from 'react'
+import React,{useState} from 'react'
+import axios from 'axios';
 import img from "../Assets/9 Gifts Every Book Nerd Wants Their Boyfriend To Get Them In Lieu Of Flowers This Valentine's Day.jpeg"
 import { useNavigate, Link } from 'react-router-dom';
 import Header from '../Components/Header';
+import baseURL from '../baseUrl';
 
 const Signup = () => {
 
-    const navigate = useNavigate();
+  const navigate = useNavigate();
+  const [formData] = useState({
+      fullName: '',
+      email: '',
+      phoneNumber: '',
+      gender: '',
+      location: '',
+      password: ''
+  });
 
-    const saveItem = () => {
-        navigate('/login')
-    }
+  // const handleChange = (e) => {
+  //     setFormData({ ...formData, [e.target.name]: e.target.value });
+  // };
+
+  const handleSubmit = async (e) => {
+      e.preventDefault();
+      try {
+          const response = await axios.post(`${baseURL}api/signup`, formData); // Adjust the endpoint as per your backend setup
+          console.log(response.data); // Log response for now
+          navigate('/login'); // Navigate to login page after successful sign-up
+      } catch (error) {
+          console.error('Error signing up:', error);
+          // Handle error (e.g., show error message to the user)
+      }
+  };
+
+    // const saveItem = () => {
+    //     navigate('/login')
+    // }
 
 
   return (
@@ -63,7 +89,7 @@ const Signup = () => {
 
             </div>
 
-            <button type="submit" onClick={saveItem}>Sign Up</button>
+            <button type="submit" onClick={() => handleSubmit()}>Sign Up</button>
 
           </form>
 
