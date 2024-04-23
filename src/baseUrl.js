@@ -1,3 +1,3 @@
 
-let baseURL = "https://slashpoint.onrender.com/api/v1/";
+let baseURL = "http://localhost:3003/";
   export default baseURL;
