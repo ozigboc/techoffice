@@ -17,7 +17,7 @@ const Sidebar = () => {
 
 
 
-  const [open, setOpen] = useState(false);
+  // const [open] = useState(false);
 
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen (!isOpen);
@@ -83,7 +83,7 @@ const Sidebar = () => {
       
       </NavLink>
 
-      <NavLink to='/products' className='link' activeclassName = 'active'>
+      {/* <NavLink to='/products' className='link' activeclassName = 'active'>
       
         <div>
         
@@ -92,9 +92,67 @@ const Sidebar = () => {
 
         </div>
       
+      </NavLink> */}
+
+      <NavLink to='/projects' className='link' activeclassName = 'active'>
+      
+        <div>
+        
+          <TbBooks  className='icon'/>
+          <h4 style={{display:isOpen ? "none" : "block"}}>Projects</h4>
+
+        </div>
+      
       </NavLink>
 
+      <NavLink to='/employees' className='link' activeclassName = 'active'>
       
+        <div>
+          <TbBooks  className='icon'/>
+          <h4 style={{display:isOpen ? "none" : "block"}}>Employees</h4>
+        </div>
+      
+      </NavLink>
+
+      <NavLink to='/departments' className='link' activeclassName = 'active'>
+        <div>
+          <TbBooks  className='icon'/>
+          <h4 style={{display:isOpen ? "none" : "block"}}>Departments</h4>
+        </div>
+      </NavLink>
+
+      <NavLink to='/roles' className='link' activeclassName = 'active'>
+      
+        <div>
+        
+          <TbBooks  className='icon'/>
+          <h4 style={{display:isOpen ? "none" : "block"}}>Roles</h4>
+
+        </div>
+      
+      </NavLink>
+
+      <NavLink to='/staffs' className='link' activeclassName = 'active'>
+      
+        <div>
+        
+          <TbBooks  className='icon'/>
+          <h4 style={{display:isOpen ? "none" : "block"}}>Staffs</h4>
+
+        </div>
+      
+      </NavLink>
+
+      <NavLink to='/skills' className='link' activeclassName = 'active'>
+      
+        <div>
+        
+          <TbBooks  className='icon'/>
+          <h4 style={{display:isOpen ? "none" : "block"}}>Skills</h4>
+
+        </div>
+      
+      </NavLink>
 
     
       <NavLink to='/settings' className='link' activeclassName = 'active'>
